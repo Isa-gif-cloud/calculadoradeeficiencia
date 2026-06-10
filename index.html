@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoÁgua Agro - Eficiência Hídrica | Concurso Agrinho 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header class="main-header">
+        <div class="header-container">
+            <h1>EcoÁgua <span>Agro</span></h1>
+            <p>Pedagogia da Pesquisa: Tecnologia aliada à sustentabilidade no campo</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <section class="info-section" aria-labelledby="title-info">
+            <h2 id="title-info">O Ciclo da Água e a Inovação</h2>
+            <p>
+                Baseado nos materiais didáticos do <strong>Sistema FAEP/SENAR-PR e Sanepar</strong>, este simulador auxilia o produtor rural a avaliar a eficiência da irrigação frente aos desafios climáticos atuais (como o La Niña) e os pilares de governança sustentável (ESG).
+            </p>
+        </section>
+
+        <section class="calculator-section" aria-labelledby="title-calc">
+            <h2 id="title-calc">Simulador de Eficiência Hídrica</h2>
+            
+            <form id="water-form" novalidate>
+                <div class="form-group">
+                    <label for="crop-select">Selecione a Cultura Principal:</label>
+                    <select id="crop-select" required>
+                        <option value="" disabled selected>Escolha uma cultura...</option>
+                        <option value="soja">Soja (Média de consumo padrão)</option>
+                        <option value="milho">Milho (Consumo moderado a alto)</option>
+                        <option value="cafe">Café (Alto valor agregado e consumo controlado)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area-input">Área da Lavoura (em hectares):</label>
+                    <input type="number" id="area-input" placeholder="Ex: 50" min="1" step="any" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="irrigation-select">Método de Irrigação Utilizado:</label>
+                    <select id="irrigation-select" required>
+                        <option value="" disabled selected>Escolha o método...</option>
+                        <option value="comum">Aspersão Comum (Eficiência: Baixa a Média)</option>
+                        <option value="gotejamento">Gotejamento Inteligente (Ciência e Inovação: Alta Eficiência)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="btn-calculate">Calcular Eficiência Hídrica</button>
+            </form>
+
+            <div id="error-message" class="error-box" hidden aria-live="assertive"></div>
+
+            <article id="result-card" class="result-box" hidden>
+                <h3>Resultado da Simulação</h3>
+                <div class="result-details">
+                    <p><strong>Cultura Analisada:</strong> <span id="res-crop">-</span></p>
+                    <p><strong>Área Total:</strong> <span id="res-area">-</span> ha</p>
+                    <p><strong>Estimativa de Consumo de Água:</strong> <span id="res-consumption">-</span> Litros/dia</p>
+                    <p><strong>Índice de Eficiência ESG:</strong> <span id="res-efficiency" class="badge">-</span></p>
+                </div>
+                <div class="result-tip">
+                    <h4>💡 Recomendação do Especialista:</h4>
+                    <p id="res-tip-text">-</p>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Projeto Autoral - Concurso Agrinho 2026 | Celebração dos 30 anos de Educação e Inovação</p>
+        <p><small>Fontes: Campanhas Agro pela Água (FAEP) & Manuais Sanepar</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
